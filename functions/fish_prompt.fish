@@ -29,14 +29,14 @@ function fish_prompt
   set -l git_status ""
 
   if test -d .git
-    if flash_git_is_stashed
-      echo (err_color)"<"(normal_color)
-    end
-    
     set folder_icon "󰊢" 
-    flash_git_is_touched
-      and set git_status (echo (seg_color)(flash_git_branch_name)" 󱅫 ")
-      or  set git_status (echo (seg_color)(flash_git_branch_name)" ")
+    if flash_git_is_stashed
+      set git_status (echo (seg_color)(flash_git_branch_name)" 󱅫 "(err_color)"stashed, check! "(normal_color))
+    else
+      flash_git_is_touched
+        and set git_status (echo (seg_color)(flash_git_branch_name)" 󱅫 ")
+        or  set git_status (echo (seg_color)(flash_git_branch_name)" ")
+    end
   end
 
   set -l format_where (

@@ -1,0 +1,1 @@
+/home/ragecpp/.fzf/shell/key-bindings.fish
