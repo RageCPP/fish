@@ -1,1 +1,1 @@
-/home/ragecpp/.fzf/shell/key-bindings.fish
+/home/rage/.fzf/shell/key-bindings.fish
